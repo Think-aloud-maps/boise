@@ -212,8 +212,8 @@
             { title: "Current Time", info: "4:10 PM." },
             { title: "Address of Origin", info: "116 Municipal Dr, Nampa, ID 83687." },
             { title: "Address of Destination", info: "834 E Curling Dr, Boise, ID 83702." },
-            { title: "Distance to Destination", info: "0" },
-            { title: "Estimated Time to Destination", info: "0" },
+            { title: "Distance to Destination", info: "20.38 miles." },
+            { title: "Estimated Time to Destination", info: "35 minutes" },
             { title: "State of Charge of Battery", info: "41% charge." },
             { title: "Range of Current Battery", info: "123 minutes." },
             { title: "Estimated Drive Distance with Current Charge", info: "93 miles." },
@@ -231,10 +231,10 @@
                 name: 'Holiday Inn Express & Suites Meridian',
 
                 location: '2920 East Freeway Drive, Meridian, ID 83642, USA',
-                originDistance: ' Miles',
-                originTime: ' Minutes',
-                destDistance: ' Miles ',
-                destTime: ' Minutes',
+                originDistance: '10.41',
+                originTime: '18',
+                destDistance: '12.43',
+                destTime: '26',
 
                 waitTime: [
                         { type: 'J1772', value: '0' }
@@ -270,10 +270,10 @@
                 name: 'Idaho Conservation League',
 
                 location: '710 N Sixth St, Boise, ID 83702, United States',
-                originDistance: ' Miles',
-                originTime: ' Minutes',
-                destDistance: ' Miles ',
-                destTime: ' Minutes',
+                originDistance: '18.40',
+                originTime: '29',
+                destDistance: '3.56',
+                destTime: '14',
 
                 waitTime: [
                         { type: 'J1772', value: '0' }
@@ -291,7 +291,7 @@
                 energySource: '59% grid, 41% renewable',
 
                 chargingFee: '$0.15',
-                chargingFeeRate: 'per kWh',
+                chargingFeeRate: 'per hour (+ $15.00 pre-authorization)',
 
                 parkingFee: '$0.00',
                 parkingFeeRate: 'for any amount of time',
@@ -935,8 +935,8 @@ function addChargingStations() {
         // Add route time/distance to instructions & update charging station details
         map.on('load', async () => {
             await getRoute(0); // Ensure this is awaited properly
-            await updateAndDisplayRouteInstructions();  // Ensure this is awaited properly
-            await updateChargingStationDetails();  // Ensure this is awaited properly
+            // await updateAndDisplayRouteInstructions();  // Ensure this is awaited properly
+            // await updateChargingStationDetails();  // Ensure this is awaited properly
             addChargingStations();  // You might need to re-add stations to reflect updated data
         });
 
